@@ -1,0 +1,125 @@
+<template>
+    <div>
+        <p>Componente de mensagem</p>
+        <div>
+            <form id="burger-form">
+                <div class="input-container">
+                    <label for="nome">Nome do cliente:</label>
+                    <input type="text" id="nome" name="nome" v-model="nome" placeholder="Digite o seu nome">
+
+                </div>
+                <div class="input-container">
+                    <label for="pao">Escolha seu pão</label>
+                    <select name="pao" id="pao" v-model="pao">
+                        <option value="">Escolha o pão:</option>
+                        <option value="integral">Integral</option>
+                    </select>
+                </div>
+                <div class="input-container">
+                    <label for="carne">Escolha sua carne</label>
+                    <select name="carne" id="carne" v-model="carne">
+                        <option value="">Escolha sua carne:</option>
+                        <option value="integral">Maminha</option>
+                    </select>
+                </div>
+                <div class="input-container" >
+                    <label for="opcionais" id="ocpionais-title">Escolha os opcionais</label>
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="opcionais" v-model="opcionais" value="Salame">
+                        <span> Salame</span>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="opcionais" v-model="opcionais" value="Salame">
+                        <span> Salame</span>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="opcionais" v-model="opcionais" value="Salame">
+                        <span> Salame</span>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="opcionais" v-model="opcionais" value="Salame">
+                        <span> Salame</span>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" name="opcionais" v-model="opcionais" value="Salame">
+                        <span> Salame</span>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <input type="submit" class="submit-btn" value="CRIAR LANCHE">
+                </div>
+            </form>
+        </div>
+    </div>
+</template>
+<script>
+    export default{
+        name: "TheBurguerForm"
+    }
+</script>
+<style scoped>
+    #burger-form{
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .input-container{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    label{
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #222;
+        padding: 5px 10px;
+        border-left: 4px solid #FCBA03;
+    }
+    input, select{
+        padding: 5px 10px;
+        width: 300px;
+    }
+    #opcionais-container{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #ocpionais-title{
+        width: 100%;
+    }
+    .checkbox-container{
+        display: flex;
+        align-items: flex-start;
+        width: 50px;
+        margin-bottom: 20px;
+    }
+    .checkbox-container span,
+    .checkbox-container input{
+        width: auto;
+
+    }
+    .checkbox-container span{
+        margin-left: 6px;
+        font-weight:  bold;
+    }
+    .submit-btn{
+        background-color: #222;
+        color: #FCBA03;
+        font-weight: bold;
+        border: 2px solid #222;
+        padding: 10px;
+        font-size: 16px;
+        margin: 0 auto;
+        cursor: pointer;
+        transition:  .5s;
+    }
+    .submit-btn:hover{
+        background-color: transparent;
+        color: #222;
+    }
+
+
+    @media (max-width: 600px) {
+        input, select{
+            width: 150px;
+        }
+    }
+</style>
